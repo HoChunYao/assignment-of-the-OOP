@@ -6,7 +6,7 @@
 using namespace std;
 
 
-class Employee																			   // class employee
+class Employee											   // class employee
 {
 	protected:
 		int jobType, id, exp, age, d, year, start_work_year;                               //declare necessary variable 
@@ -14,15 +14,15 @@ class Employee																			   // class employee
 		float initial_salary, base_salary, rough_salary, nett_salary, epf;
 		
 	public:
-		Employee()																		   //default constructor of employee : initialise the age , year and start work year
+		Employee()									//default constructor of employee : initialise the age , year and start work year
 		{
 			age = 0;
 			year = 2022;
 			start_work_year = 2022;
 		}
 		
-		void setDetails()																	//Accessor function : set data and user input for name, DOB,conctact number ,
-		{																					//education level and start work year
+		void setDetails()								//Mutator function : set data and user input for name, DOB,conctact number ,
+		{										//education level and start work year
 			cout << " Enter Job Type\t\t: ";
 			cin >> jobType;
 			cout << " Enter ID\t\t: ";
@@ -42,7 +42,7 @@ class Employee																			   // class employee
 			cin >> start_work_year;	
 		}
 		
-		void calAge()																	//Accessor Function of calculation of Age
+		void calAge()								//Mutator function  of calculation of Age
 		{
 			switch(dob.length())
 			{
@@ -60,63 +60,63 @@ class Employee																			   // class employee
 			}
 		}
 		
-		void calcExp()																//Accessor Function of calculation of Experience of years
+		void calcExp()								//Mutator function  of calculation of Experience of years
 		{
 			exp = year - start_work_year;
 		}
 		
-		void setJobType(int &set_jobType)										   //Accessor function : set jobType
+		void setJobType(int &set_jobType)					//Mutator function : set jobType
 		{
 			jobType = set_jobType;
 		}
 		
-		void setId(int &set_id)					  					              //Accessor function : set id
+		void setId(int &set_id)							//Mutator function : set id
 		{
 			id = set_id;
 		}
 		
-		void setName(string &set_name)										     //Accessor function : set name
+		void setName(string &set_name)						//Mutator function : set name
 		{
 			name = set_name;
 		}
 		
-		void setAge(int &set_age)										        //Accessor function : set age
+                void setAge(int &set_age)						//Mutator function : set age
 		{
 			age = set_age;
 		}
 		
-		void setContact(string &set_contact)								   //Accessor function : set contact number
+		void setContact(string &set_contact)					//Mutator function : set contact number
 		{
 			contact_num = set_contact;
 		}
 		
-		void setDOB(string &set_dob)										   //Accessor function : set date of brith
+		void setDOB(string &set_dob)						//Mutator function : set date of brith
 		{
 			dob = set_dob;
 		}
 		
-		void setEdu(string &set_edu)										   //Accessor function : set education level
+		void setEdu(string &set_edu)					       //Mutator function : set education level
 		{
 			edu_level = set_edu;
 		}
 		
-		void setExp(int &set_exp)											  //Accessor function : set Experience of years
+		void setExp(int &set_exp)						//Mutator function : set Experience of years
 		{
 			exp = set_exp;
 		}
 		
-		void setStartWork(int &set_start_work)								//Accessor function : set start working date or date of entering the company
+		void setStartWork(int &set_start_work)					//Mutator function : set start working date or date of entering the company
 		{
 			start_work_year = set_start_work;
 		}
 		
-		void setYear(int &set_year)											//Accessor function : set working years
+		void setYear(int &set_year)						//Mutator function : set working years
 		{
 			year = set_year;
 		}
 		
-		void display()														//Accessor function :display the name, age , contact number , date of brith , education of level,
-		{																	//years of experience of years ,and start work year
+		void display()								//Mutator function :display the name, age , contact number , date of brith , education of level,
+		{									//years of experience of years ,and start work year
 			cout << " " << endl;
 			cout << " Name\t\t: " << name << endl;
 			cout << " Age\t\t: " << age << endl;
@@ -128,73 +128,73 @@ class Employee																			   // class employee
 			cout << " " << endl;
 		}
 		
-		int getJobType()													//mutator function : get the job type (int)
+		int getJobType()							//Accessor function : get the job type (int)
 		{
 			return jobType;
 		}
 		
-		int getId()															//mutator function : get the id (int)
+		int getId()								//Accessor function : get the id (int)
 		{
 			return id;	
 		}
 		
-		int getAge()														//mutator function : get the age (int)
+		int getAge()								//Accessor function : get the age (int)
 		{
 			return age;
 		}
 		
-		string getName()													//mutator function : get the name (string)
+		string getName()							//Accessor function : get the name (string)
 		{
 			return name;
 		}
 		
-		string getContact()													//mutator function : get the contact number (string)
+		string getContact()							//Accessor function : get the contact number (string)
 		{
 			return contact_num;
 		}		
 		
-		string getDOB()														//mutator function : get the date of brith (int)
+		string getDOB()								//Accessor function : get the date of brith (int)
 		{
 			return dob;
 		}
 		
-		string getEdu()														//mutator function : get the education level (string)
+		string getEdu()								//Accessor function : get the education level (string)
 		{
 			return edu_level;
 		}
 		
-		int getExp()														//mutator function : getter job type
+		int getExp()								//Accessor function : getter job type
 		{
 			return exp;
 		}
 		
-		int getStartWork()													//mutator function : getter job type
+		int getStartWork()							//Accessor function : getter job type
 		{
 			return start_work_year;
 		}
 		
-	friend void writeData(Employee *);										//friend function to write data of employee
+	friend void writeData(Employee *);						//friend function to write data of employee
 };
 
 
-class Executive : public Employee											// class executive which inherits publicly from class Employee
+class Executive : public Employee							// class executive which inherits publicly from class Employee
 {
 	private:
 		float bonus;														
 	
 	public:
-		Executive()															//default constructor : to initialise the data of salary ,base salary,rough salary ,net salary
-		{																	//epf socso and bonus
-			initial_salary = 2000; 											// bachelor initial salary
- 			d = 300;			   											// bachelor difference
-			base_salary = 0;
-			rough_salary = 0;
+		Executive()								//default constructor : to initialise the data of salary ,base salary,rough salary ,net salary
+		{									//epf socso and bonus
+			initial_salary = 2000; 						// bachelor initial salary
+ 			d = 300;			   				// bachelor difference
+			base_salary = 0;						//Mutator function :
+			rough_salary = 0;						//Accessor function :
 			nett_salary = 0;
 			epf = 0;
 			bonus = 0;	
 		}	
 		
-		void calcBaseSalary()												//Accessor function : calculation of the salary in class Executive
+		void calcBaseSalary()							//Mutator function : calculation of the salary in class Executive
 		{
 			
 			if(edu_level.find("Diploma") == 0)
@@ -206,7 +206,7 @@ class Executive : public Employee											// class executive which inherits pu
 			base_salary = initial_salary + ((exp)*(d));
 		}
 		
-		void display_base_salary()											//Accessor function : display the base salary 
+		void display_base_salary()						//Mutator function : display the base salary 
 		{
 			calcBaseSalary();
 			cout << fixed;
@@ -215,58 +215,58 @@ class Executive : public Employee											// class executive which inherits pu
 			cout << " " << endl;
 		}
 		
-		void setBonus()														//Accessor function : set bonus and let user enter the bonus
+		void setBonus()								//Mutator function : set bonus and let user enter the bonus
 		{
 			cout << " Enter Bonus\t: RM ";
 			cin >> bonus;
 		}
 		
-		void calcRoughSalary()												//Accessor function : calculation of rough salary
+		void calcRoughSalary()							//Mutator function : calculation of rough salary
 		{
 			rough_salary = base_salary + bonus;
 		}
 		
-		void EPF()													//Accesor function : calculation of EPF_Socso
+		void EPF()								//Mutator function : calculation of EPF_Socso
 		{
 			epf = rough_salary*(0.09);
 		}
 		
-		void calcNett()														//Accesor function : calculation of the net salary
+		void calcNett()								//Mutator function : calculation of the net salary
 		{
 			nett_salary = rough_salary - epf;
 		}
 		
-		float get_RoughSalary()												//Mutator function : get the rough salary
+		float get_RoughSalary()							//Accessor function : get the rough salary
 		{
 			return rough_salary;
 		}
 		
-		float get_BaseSalary()												//Mutator function : get the base salary
+		float get_BaseSalary()							//Accessor function : get the base salary
 		{
 			return base_salary;
 		}
 		
-		float get_EpfSocso()												//Mutator function : get the EPF and SOCSO
+		float get_EpfSocso()							//Accessor function : get the EPF 
 		{
 			return epf;
 		}
 		
-		float get_NettSalary()												//Mutator function : get the net salary
+		float get_NettSalary()							//Accessor function : get the net salary
 		{
 			return nett_salary;
 		}
 };
 
 
-class BlueCollar : public Employee											//class BlueCollar which inherits publicly from class Employee
+class BlueCollar : public Employee							//class BlueCollar which inherits publicly from class Employee
 {
 	private:
 		float OT_rate, OT_pay;
 		int OT_hours;
 		
 	public:
-		BlueCollar()														//default constructor : to initiliase the data of salary ,base salary,rough salary ,net salary
-		{																	//Overtime of rate ,overtime of hours.
+		BlueCollar()					//default constructor : to initiliase the data of salary ,base salary,rough salary ,net salary
+		{						//Overtime of rate ,overtime of hours.
 			OT_rate = 2.0;
 			initial_salary = 1400;
 			d = 50;
@@ -275,12 +275,12 @@ class BlueCollar : public Employee											//class BlueCollar which inherits p
 			OT_hours = 0;
 		}
 		
-		void calcBaseSalary()												//Accessor function : calculate the base salary
+		void calcBaseSalary()									//Mutator function : calculate the base salary
 		{
 			base_salary = initial_salary + ((exp)*(d));
 		}
 		
-		void display_base_salary()											//Accessor function : display the base salary
+		void display_base_salary()								//Mutator function : display the base salary
 		{
 			calcBaseSalary();
 			cout << fixed;
@@ -289,70 +289,70 @@ class BlueCollar : public Employee											//class BlueCollar which inherits p
 			cout << " " << endl;
 		}
 		
-		void set_OtHours()												  //Accessor Function : set data of the overtime hours and user input for the overtime hours
+		void set_OtHours()					//Mutator function : set data of the overtime hours and user input for the overtime hours
 		{
 			cout << " Enter OT Hours\t: ";
 			cin >> OT_hours;
 		}
 		
-		void calcOtPay()												//Accessor function : calculate the overtime payment
+		void calcOtPay()									//Mutator function : calculate the overtime payment
 		{
 			OT_pay = (OT_hours*2)*(base_salary / (26*8));
 		}
 		
-		void calcRoughSalary()											//Accessor function : calculate the rough salary
+		void calcRoughSalary()									//Mutator function : calculate the rough salary
 		{
 			rough_salary = base_salary + OT_pay;
 		}
 		
-		void EPF()												//Accessor function : calculate the epf and sosco
+		void EPF()										//Mutator function : calculate the epf and sosco
 		{
 			epf = rough_salary*(0.09);
 		}
 		
-		void calcNett()													//Accessor function : calculate the net salary
+		void calcNett()										//Mutator function : calculate the net salary
 		{
 			nett_salary = rough_salary - epf;
 		}
 		
-		float get_RoughSalary()                                        //Mutator function : get the data of rough salary
+		float get_RoughSalary()                                        				//Accessor function : get the data of rough salary
 		{
 			return rough_salary;
 		}
 		
-		float get_BaseSalary()											//Mutator function : get the data of base salary
+		float get_BaseSalary()									//Accessor function : get the data of base salary
 		{
 			return base_salary;
 		}
 		
-		float get_EpfSocso()											//Mutator function : get the data of Epf and SOCSO
+		float get_EpfSocso()									//Accessor function : get the data of Epf and SOCSO
 		{
 			return epf;
 		}
 		
-		float get_NettSalary()											//Mutator function :get the data of net salary
+		float get_NettSalary()									//Accessor function :get the data of net salary
 		{
 			return nett_salary;
 		}
 		
-		float get_OtPay()												//Mutator function : get the data of overtime payment
+		float get_OtPay()									//Accessor function : get the data of overtime payment
 		{
 			return OT_pay;
 		}
 };
 
 
-class Page																//class Page
+class Page												//class Page
 {
 	private:
 		
-		int menu, num_of_lines, compare_id, compare_year, compare_month;  //declaration  neccessary variable
+		int menu, num_of_lines, compare_id, compare_year, compare_month; 		 	//declaration  neccessary variable
 		int round,*fired_ID;
 		char repeat_register;
 		string which_file, line;
 		
-		Employee *Emp;													// create the object of Employee ,Executive and BlueCollar 
-		Executive *Exec;												// and using the pointer.
+		Employee *Emp;										// create the object of Employee ,Executive and BlueCollar 
+		Executive *Exec;									// and using the pointer.
 		BlueCollar *Blue;
 		
 		// Troublesome parts !!!!
@@ -360,7 +360,7 @@ class Page																//class Page
 		string emp_name, emp_dob, emp_contact, emp_edu;
 		
 	public:
-		Page()															//default construtor of the Page : display the main page 
+		Page()											//default construtor of the Page : display the main page 
 		{																
 			repeat_register = 'Y';
 			
@@ -377,16 +377,16 @@ class Page																//class Page
 			cout << " ******************************************************" << endl;
 		}
 		
-		void setMenu(int &m)    													// pass by reference using reference arguments
+		void setMenu(int &m)    								// pass by reference using reference arguments
 		{
 			menu = m;
 		}
 		
-		void display()																//display the choice from user 
+		void display()										//display the choice from user 
 		{
-			if(menu == 1)															//when user enter choice 1 
+			if(menu == 1)									//when user enter choice 1 
 			{
-				cout << " " << endl;												//will display this section
+				cout << " " << endl;							//will display this section
 				cout << "\t\t Register New Employee(s)" << endl;
 				cout << " ******************************************************" << endl;
 				
@@ -396,49 +396,49 @@ class Page																//class Page
 				
 				do
 				{
-					Emp = new Employee;												//Using the DMA to allocate the array
-					Emp->setDetails();												//calling the accessor funtion from class  Employee
+					Emp = new Employee;						//Using the DMA to allocate the array
+					Emp->setDetails();						//calling the accessor funtion from class  Employee
 					Emp->calAge();
 					Emp->calcExp();
 					
-					writeData(Emp);													//Pass the class object to write data function
+					writeData(Emp);							//Pass the class object to write data function
 					
-					delete Emp;														//delete object Employee
+					delete Emp;							//delete object Employee
 					
 					cout << " " << endl;
 					cout << " Continue Registering a New Employee ? : ";
-					cin >> repeat_register;											//let user input their choice to continue of not
+					cin >> repeat_register;						//let user input their choice to continue of not
 					cout << " " << endl;
 					
-				} while(repeat_register == 'Y');									//while user enter Y the programme will run again 
+				} while(repeat_register == 'Y');					//while user enter Y the programme will run again 
 			}
 			
-			else if(menu == 2)														//when user enter the choice 2 will start this function
+			else if(menu == 2)								//when user enter the choice 2 will start this function
 			{																		
 				cout << " " << endl;
 				cout << "\t\t Search Employee's Details" << endl;
 				cout << " ******************************************************" << endl;
 				cout << " Enter ID : ";	
-				cin >> compare_id;													//let user enter Id number due to checking employee id 
+				cin >> compare_id;							//let user enter Id number due to checking employee id 
 				
-				if(compare_id<2000)													//if employee id is 2000 
+				if(compare_id<2000)							//if employee id is 2000 
 				{
-					which_file = "Exe_Data.txt";									//assign the file name to 'which file'
+					which_file = "Exe_Data.txt";					//assign the file name to 'which file'
 				
-					numOfLines(which_file);											//using the num of line to know how many line in the file
-					Exec = new Executive[num_of_lines];								//using the DMA to allocate number of array
+					numOfLines(which_file);						//using the num of line to know how many line in the file
+					Exec = new Executive[num_of_lines];				//using the DMA to allocate number of array
 					
-					ifstream myfile(which_file);									//open the file
+					ifstream myfile(which_file);					//open the file
 					
-					if(myfile.is_open())											//when file is open successfully
+					if(myfile.is_open())						//when file is open successfully
 					{
-						for(int i=0; i<num_of_lines; i++)                           //will using the for loop the read data in the file
+						for(int i=0; i<num_of_lines; i++)                       //will using the for loop the read data in the file
 						{
 							myfile >> emp_jobType >> emp_id >> emp_name >> emp_dob >> emp_age >> 
 						    emp_contact >> emp_edu >> emp_exp >> emp_start_work;
 						    
-						    if(compare_id == emp_id)								//when user input id number is same with the inside of the file id 
-						    {														//that will pass the data to the accessor funtion by using calling accessor function
+						    if(compare_id == emp_id)			//when user input id number is same with the inside of the file id 
+						    {				//that will pass the data to the accessor funtion by using calling accessor function
 						    	Exec[i].setId(emp_id);								
 						    	Exec[i].setName(emp_name);
 						    	Exec[i].setAge(emp_age);
@@ -453,18 +453,18 @@ class Page																//class Page
 						    	compare_id = 0;
 							}
 						}
-						delete [] Exec;												//delete the object of Executive with array
-						myfile.close();												//closing the file and finish this pass	
+						delete [] Exec;							//delete the object of Executive with array
+						myfile.close();							//closing the file and finish this pass	
 					}
 				
-					else															//if can not open the file
+					else									//if can not open the file
 					{
 						cout << " " << endl;
 						cout << " Unable to Open File " << endl;
 					}
 				}
 				
-				else																//if employee id is not 2000 
+				else										//if employee id is not 2000 
 				{
 					which_file = "Blue_Data.txt";
 				
@@ -509,29 +509,29 @@ class Page																//class Page
 				
 			}
 			
-			else if(menu == 3)												//when user choice the number 3
-			{																//that will be updating the contact number
+			else if(menu == 3)									//when user choice the number 3
+			{											//that will be updating the contact number
 				cout << " " << endl;
 				cout << "\t\t Update Contact Number" << endl;
 				cout << " ******************************************************" << endl;
 				cout << " Enter ID : ";
-				cin >> compare_id;											//user input the id number due to compare
+				cin >> compare_id;								//user input the id number due to compare
 				cout << " " << endl;
 				
-				if(compare_id<2000)											//if id number is 2000
+				if(compare_id<2000)								//if id number is 2000
 				{
-					which_file = "Exe_Data.txt";							//the which file will be assigned by the "Exe_Data.txt"
+					which_file = "Exe_Data.txt";						//the which file will be assigned by the "Exe_Data.txt"
 				}
-				else														//if id number is not 2000
+				else										//if id number is not 2000
 				{
-					which_file = "Blue_Data.txt";							//the which file will be assigned by the "Blue_Data.txt"
+					which_file = "Blue_Data.txt";						//the which file will be assigned by the "Blue_Data.txt"
 				}
 				
-				numOfLines(which_file);										//using the function of num of line to know how many line in the file
+				numOfLines(which_file);								//using the function of num of line to know how many line in the file
 				Emp = new Employee[num_of_lines];
 				
 				// Read Data From a File and Store It
-				ifstream infile(which_file);								//open the file
+				ifstream infile(which_file);							//open the file
 				
 				if(infile.is_open())
 				{
@@ -551,16 +551,16 @@ class Page																//class Page
 				    	Emp[i].setStartWork(emp_start_work);
 				    	
 				    	// Search Data
-				    	if(compare_id == Emp[i].getId())									//if id number is same with the employee id
+				    	if(compare_id == Emp[i].getId())					//if id number is same with the employee id
 				    	{
-				    		cout << " Name\t\t: " << Emp[i].getName() << endl;				//display the name ,age and contact number
+				    		cout << " Name\t\t: " << Emp[i].getName() << endl;		//display the name ,age and contact number
 				    		cout << " Age\t\t: " << Emp[i].getAge() << endl;
 				    		cout << " Contact Number\t: " << Emp[i].getContact() << endl;
 				    		
 				    		cout << " " << endl;
 				    		cout << " New Contact Number : ";
-				    		cin >> emp_contact;												//let user enter the new contact number
-				    		Emp[i].setContact(emp_contact);									//set the new contact number to the data or class
+				    		cin >> emp_contact;						//let user enter the new contact number
+				    		Emp[i].setContact(emp_contact);					//set the new contact number to the data or class
 				    		
 				    		cout << " " << endl;
 				    		
@@ -575,11 +575,11 @@ class Page																//class Page
 				
 				
 				// Write new update Data to the file
-				ofstream outfile(which_file); 									//open the file
+				ofstream outfile(which_file); 							//open the file
 				
-				if(outfile.is_open())											//if file is open 
+				if(outfile.is_open())								//if file is open 
 				{
-					for(int i=0; i<num_of_lines; i++)							//using the for loop to update data of employee
+					for(int i=0; i<num_of_lines; i++)					//using the for loop to update data of employee
 					{
 						outfile <<Emp[i].getJobType() << " "<< Emp[i].getId() << " " << Emp[i].getName() << " "
 						<< Emp[i].getDOB() << " " << Emp[i].getAge() << " " << Emp[i].getContact() << " " 
@@ -587,12 +587,12 @@ class Page																//class Page
 					}
 				}
 				
-				outfile.close();											//closing the file
-				delete [] Emp;												//delete the object employee 
+				outfile.close();								//closing the file
+				delete [] Emp;									//delete the object employee 
 				// End -- Write new update Data to the file
 			}
 			
-			else if(menu == 4)												//when user enter the number 4 and this function will be run
+			else if(menu == 4)								//when user enter the number 4 and this function will be run
 			{	
 				cout << " " << endl;
 				cout << "\t\t Update Employees' Details" << endl;
@@ -601,24 +601,24 @@ class Page																//class Page
 				cout << " based on their D.O.B and their Start Work Year." << endl;
 				cout << " " << endl;
 				cout << " Enter Year\t: ";
-				cin >> compare_year;										//let user input the year
+				cin >> compare_year;								//let user input the year
 				
 				round = 2;
 				
-				for(int j=0; j<round; j++)									//using the for loop the to know the job type
+				for(int j=0; j<round; j++)							//using the for loop the to know the job type
 				{
 					if(j==0)
 					{
-						which_file = "Exe_Data.txt";						//and to select the which file will be used
+						which_file = "Exe_Data.txt";					//and to select the which file will be used
 					}
 					else if(j==1)
 					{
 						which_file = "Blue_Data.txt";
 					}
 					
-					numOfLines(which_file);									//using the function to know how many line in the file
+					numOfLines(which_file);							//using the function to know how many line in the file
 					Emp = new Employee[num_of_lines];
-					ifstream infile(which_file);							//open the file 
+					ifstream infile(which_file);						//open the file 
 					if(infile.is_open())
 					{
 						for(int i=0; i<num_of_lines; i++)					
@@ -626,7 +626,7 @@ class Page																//class Page
 							infile >> emp_jobType >> emp_id >> emp_name >> emp_dob >> emp_age >>  //read data from the file
 							emp_contact >> emp_edu >> emp_exp >> emp_start_work; 
 							
-							Emp[i].setJobType(emp_jobType);									//set data to the class employee
+							Emp[i].setJobType(emp_jobType);				//set data to the class employee
 						    Emp[i].setId(emp_id);
 					    	Emp[i].setName(emp_name);
 					    	Emp[i].setAge(emp_age);
@@ -640,11 +640,11 @@ class Page																//class Page
 					    	Emp[i].calcExp();
 						}
 					}
-					infile.close();															//closing the file
+					infile.close();								//closing the file
 					
 					
-					ofstream outfile(which_file);											//open the file
-					if(outfile.is_open())													//print out the data to the file
+					ofstream outfile(which_file);						//open the file
+					if(outfile.is_open())							//print out the data to the file
 					{
 						for(int i=0; i<num_of_lines; i++)
 						{
@@ -653,9 +653,9 @@ class Page																//class Page
 							<< Emp[i].getEdu() << " " << Emp[i].getExp() << " " << Emp[i].getStartWork() << "\n";
 						}
 					}		
-					outfile.close();														//closing the file
+					outfile.close();							//closing the file
 					num_of_lines = 0;
-					delete [] Emp;                                   						// delete the object of employee
+					delete [] Emp;                                   			// delete the object of employee
 				}
 				
 				cout << " " << endl;
@@ -665,17 +665,17 @@ class Page																//class Page
 				cout << " " << endl;
 			}
 			
-			else if(menu == 5)																//when user choice 5 in the main page
+			else if(menu == 5)									//when user choice 5 in the main page
 			{
 				cout << " " << endl;
 				cout << "\t\t Calculate Employees' Salary" << endl;
 				cout << " ******************************************************" << endl;
 				
-				ofstream outfile("Salary.txt");												//open the file -> "Salary.txt"
+				ofstream outfile("Salary.txt");							//open the file -> "Salary.txt"
 				
 				round = 2;
 				
-				for(int j=0; j<round; j++)          //if j=0 the file name ->    "Exe_Data.txt" ,else  the file name    -> "Blue_Data.txt"                           
+				for(int j=0; j<round; j++)          	//if j=0 the file name ->    "Exe_Data.txt" ,else  the file name    -> "Blue_Data.txt"                           
 				{
 					if(j==0)
 					{
@@ -686,15 +686,15 @@ class Page																//class Page
 						
 						Exec = new Executive[num_of_lines];
 						
-						ifstream infile(which_file);                                  										 //open file
+						ifstream infile(which_file);                            //open file
 						if(infile.is_open())
 						{
 							for(int i=0; i<num_of_lines; i++)
 							{
-								infile >> emp_jobType >> emp_id >> emp_name >> emp_dob >> emp_age >> 						//read file 
+								infile >> emp_jobType >> emp_id >> emp_name >> emp_dob >> emp_age >>//read file 
 								emp_contact >> emp_edu >> emp_exp >> emp_start_work;
 								
-								Exec[i].setJobType(emp_jobType);															//set data to the class employee
+								Exec[i].setJobType(emp_jobType);	//set data to the class employee
 								Exec[i].setId(emp_id);
 								Exec[i].setName(emp_name);
 						    	Exec[i].setAge(emp_age);
@@ -703,11 +703,11 @@ class Page																//class Page
 
 								cout << fixed;
 								
-								cout << " Job Type\t: " << Exec[i].getJobType() << endl;									//display the job type , id ,name and base salary
+								cout << " Job Type\t: " << Exec[i].getJobType() << endl;	//display the job type , id ,name and base salary
 								cout << " ID\t\t: " << Exec[i].getId() << endl;
 								cout << " Name\t\t: " << Exec[i].getName() << endl;
 								cout << " Base Salary\t: RM" << setw(8) << setprecision(2) << Exec[i].get_BaseSalary() << endl;
-								Exec[i].setBonus();																			//calling the asseccer function 
+								Exec[i].setBonus();						//calling the asseccer function 
 								
 								Exec[i].calcRoughSalary();
 								Exec[i].EPF();
@@ -721,9 +721,9 @@ class Page																//class Page
 								cout << " " << endl;
 							}
 						}
-						infile.close();															//closing the file
+						infile.close();					//closing the file
 						
-						if(outfile.is_open())													//write data into the file
+						if(outfile.is_open())				//write data into the file
 						{
 							for(int i=0; i<num_of_lines; i++)													
 							{
@@ -734,7 +734,7 @@ class Page																//class Page
 									    << setw(10) << setprecision(2) << "RM" << Exec[i].get_NettSalary() << "\n"; 
 							}
 						}
-						delete [] Exec;										//delete object of the executive
+						delete [] Exec;							//delete object of the executive
 					}
 					
 					else
@@ -746,12 +746,12 @@ class Page																//class Page
 						
 						Blue = new BlueCollar[num_of_lines];
 						
-						ifstream infile(which_file);						//open the file
+						ifstream infile(which_file);					//open the file
 						if(infile.is_open())
 						{
 							for(int i=0; i<num_of_lines; i++)
 							{
-								infile >> emp_jobType >> emp_id >> emp_name >> emp_dob >> emp_age >> 			//read data from the file
+								infile >> emp_jobType >> emp_id >> emp_name >> emp_dob >> emp_age >> 	//read data from the file
 								emp_contact >> emp_edu >> emp_exp >> emp_start_work;
 								
 								Blue[i].setJobType(emp_jobType);
@@ -769,7 +769,7 @@ class Page																//class Page
 								cout << " Base Salary\t: RM" << setw(8) << setprecision(2) << Blue[i].get_BaseSalary() << endl;
 								Blue[i].set_OtHours();
 								
-								Blue[i].calcOtPay();													//calculation using the calling accessor function
+								Blue[i].calcOtPay();				//calculation using the calling accessor function
 								Blue[i].calcRoughSalary();
 								Blue[i].EPF();
 								Blue[i].calcNett();
@@ -784,9 +784,9 @@ class Page																//class Page
 							}
 							
 						}
-						infile.close();											//closing the file
+						infile.close();							//closing the file
 						
-						if(outfile.is_open())									//open the file and write data into the file
+						if(outfile.is_open())						//open the file and write data into the file
 						{
 							for(int i=0; i<num_of_lines; i++)
 							{
@@ -809,10 +809,10 @@ class Page																//class Page
 				cout << "\t\t Fire Employee(s)" << endl;
 				cout << " ******************************************************" << endl;
 				cout << " How many Employee to be Fired ? : ";
-				cin >> round;										//user input due to looping
+				cin >> round;							//user input due to looping
 				cout << " " << endl;
 				
-				fired_ID = new int[round];							//using DMA to allocated array
+				fired_ID = new int[round];					//using DMA to allocated array
 				
 				for(int j=0; j<round; j++)
 				{
@@ -820,7 +820,7 @@ class Page																//class Page
 					cout << " Enter ID\t: ";
 					cin >> fired_ID[j];
 					
-					if(fired_ID[j] < 2000)							//determine which file will be use
+					if(fired_ID[j] < 2000)					//determine which file will be use
 					{
 						which_file = "Exe_Data.txt";
 					}
@@ -852,9 +852,9 @@ class Page																//class Page
 					    	Emp[i].setExp(emp_exp);
 					    	Emp[i].setStartWork(emp_start_work);
 					    	
-					    	if(fired_ID[j] == Emp[i].getId())									//when fire id same with the employee id
+					    	if(fired_ID[j] == Emp[i].getId())					//when fire id same with the employee id
 					    	{
-					    		cout << " Name\t\t: " << Emp[i].getName() << endl;				//will display the name of employee
+					    		cout << " Name\t\t: " << Emp[i].getName() << endl;		//will display the name of employee
 					    		
 					    		cout << " " << endl;
 							}
@@ -864,7 +864,7 @@ class Page																//class Page
 					
 					ofstream outfile(which_file);
 					
-					if(outfile.is_open())											//write data to the file
+					if(outfile.is_open())								//write data to the file
 					{
 						for(int i=0; i<num_of_lines; i++)					
 						{
@@ -885,7 +885,7 @@ class Page																//class Page
 			}
 		
 		
-		void numOfLines(string which_file)										//this function is calcute how many line in the file due to the looping
+		void numOfLines(string which_file)				//this function is calcute how many line in the file due to the looping
 		{
 			ifstream myfile(which_file);
 			
@@ -949,28 +949,28 @@ void writeData(Employee *Emp)					//write data to the file
 
 int main()  
 {
-	Page *page;       											//declare the object of the Page,and display the consturctor (main page
+	Page *page;       								//declare the object of the Page,and display the consturctor (main page)
 	
 	string space;
 	int menu_selection = 0;
 	
-	do															//do while loop 
+	do											//do while loop 
 	{
 		page = new Page;
 		
 		cout << " Enter Menu Selection : ";
-		cin >> menu_selection;									//let user to enter value of the main page
+		cin >> menu_selection;								//let user to enter value of the main page
 		
 		system("cls");
 		page->setMenu(menu_selection);							//passing the value the accessor function due to know user input
 		page->display();
 		
 		
-		if(menu_selection == 7)									//if user enter number 7
+		if(menu_selection == 7)								//if user enter number 7
 		{
 			cout << " Thank you for using this Program"; 		
 		}
-		else													//if user enter number is not 7
+		else										//if user enter number is not 7
 		{
 			cout << " Press Enter to the Home Page";
 		}
