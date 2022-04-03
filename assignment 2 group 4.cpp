@@ -305,7 +305,7 @@ class BlueCollar : public Employee							//class BlueCollar which inherits publi
 			rough_salary = base_salary + OT_pay;
 		}
 		
-		void EPF()										//Mutator function : calculate the epf and sosco
+		void EPF()										//Mutator function : calculate the epf 
 		{
 			epf = rough_salary*(0.09);
 		}
@@ -325,7 +325,7 @@ class BlueCollar : public Employee							//class BlueCollar which inherits publi
 			return base_salary;
 		}
 		
-		float get_EpfSocso()									//Accessor function : get the data of Epf and SOCSO
+		float get_Epf()									//Accessor function : get the data of Epf and SOCSO
 		{
 			return epf;
 		}
@@ -776,7 +776,7 @@ class Page												//class Page
 								
 								cout << " Total OT Pay\t: RM" << setw(8) << setprecision(2) << Blue[i].get_OtPay() << endl;							//display the data after calculation
 								cout << " Rough Salary\t: RM" << setw(8) << setprecision(2) << Blue[i].get_RoughSalary() << endl;
-								cout << " EPF Socso (9%)\t: RM" << setw(8) << setprecision(2) << Blue[i].get_EpfSocso() << endl;
+								cout << " EPF Socso (9%)\t: RM" << setw(8) << setprecision(2) << Blue[i].get_Epf() << endl;
 								cout << " Nett Salary\t: RM" << setw(8) << setprecision(2) << Blue[i].get_NettSalary() << endl;
 								
 								cout << " " << endl;
@@ -793,7 +793,7 @@ class Page												//class Page
 								outfile << fixed;
 								outfile << setw(3) << Blue[i].getJobType() << setw(6) << Blue[i].getId() 
 										<< setw(10) << Blue[i].getName()
-										<<setw(8) << setprecision(2) << "RM" << Blue[i].get_EpfSocso()
+										<<setw(8) << setprecision(2) << "RM" << Blue[i].get_Epf()
 									    << setw(10) << setprecision(2) << "RM" << Blue[i].get_NettSalary() << "\n"; 
 							}
 						}
