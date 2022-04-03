@@ -1,0 +1,4 @@
+1 1000 Ahmad 5-5-1998 24 019-7894332 Bachelor_of_Electronic_Engineering 10 2012
+1 1201 Bakar 6-6-1998 24 018-8787878 Bachelor_of_Electronic_Engineering 2 2020
+1 1211 Amin 12-4-2000 22 012-3456789 Diploma_in_Electronic_Engineering 0 2022
+1 1006 Arain 18-9-2003 19 018-7902295 Diploma_in_information_technology 0 2022
